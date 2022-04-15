@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Verify Email
+{% endblock %}
+
+
+{% block page_content %}
+    <div class="gtco-cover gtco-cover-sm"
+         style="background-image: url({% static 'images/veliko-tarnovo-bulgaria-community-building-travel.jpg' %})"
+         data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="gtco-container text-center">
+            <div class="display-t">
+                <div class="display-tc">
+                    <h2>Thank you for registering for Adventure Travel.</h2>
+                    <h2> We have sent you a confirmation email.</h2>
+                    <h2>Please confirm your email address and your account will be activated.</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

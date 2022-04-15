@@ -1,0 +1,6 @@
+{% autoescape off %}
+    Hello, Adventurer,
+    Please click on the link below in order to confirm your email address.
+    {{ domain }}{% url 'activate email' pk=user.id token=token %}
+    If this is not you, please ignore this email.
+{% endautoescape %}
