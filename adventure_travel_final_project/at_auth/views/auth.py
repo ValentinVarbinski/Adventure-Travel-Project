@@ -33,5 +33,5 @@ class UserLogoutView(auth_views.LogoutView):
     next_page = 'home'
 
 
-class UserRequireRegistrationView(views.TemplateView):
+class UserRequireLoginView(views.TemplateView):
     pass
