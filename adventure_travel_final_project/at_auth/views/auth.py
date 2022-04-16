@@ -34,4 +34,4 @@ class UserLogoutView(auth_views.LogoutView):
 
 
 class UserRequireLoginView(views.TemplateView):
-    pass
+    template_name = 'auth/require_login.html'

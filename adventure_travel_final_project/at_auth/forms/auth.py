@@ -2,10 +2,16 @@ from django.contrib.auth import forms as auth_forms
 from django import forms
 
 from adventure_travel_final_project.at_auth.models import AdventureTravelUser
+from adventure_travel_final_project.common.mixins import BootstrapFormMixin, RemoveLabelFormMixin
 from adventure_travel_final_project.common.validators import validate_bot_catcher
 
 
-class RegisterForm(auth_forms.UserCreationForm):
+class RegisterForm(BootstrapFormMixin, RemoveLabelFormMixin, auth_forms.UserCreationForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self._init_bootstrap_form_controls()
+        self._init_bootstrap()
+
     password1 = forms.CharField(
         widget=forms.PasswordInput(
             attrs={'placeholder': 'Enter your password'}
@@ -39,7 +45,12 @@ class RegisterForm(auth_forms.UserCreationForm):
         validate_bot_catcher(self.cleaned_data['bot_catcher'])
 
 
-class LoginForm(auth_forms.AuthenticationForm):
+class LoginForm(BootstrapFormMixin, RemoveLabelFormMixin, auth_forms.AuthenticationForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self._init_bootstrap_form_controls()
+        self._init_bootstrap()
+
     USERNAME_MAX_LENGTH = 10
     PASSWORD_MAX_LENGTH = 20
 
