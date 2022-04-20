@@ -33,7 +33,7 @@ class AdventureTravelProfile(models.Model):
     )
 
     last_name = models.CharField(
-        max_length=LAST_NAME_MIN_LENGTH,
+        max_length=LAST_NAME_MAX_LENGTH,
         blank=True,
         validators=(
             validate_only_english_letters,
@@ -86,7 +86,8 @@ class AdventureTravelProfile(models.Model):
 
     user = models.OneToOneField(
         AdventureTravelUser,
-        on_delete=models.CASCADE
+        related_name='profile_user',
+        on_delete=models.CASCADE,
     )
 
     class Meta:
