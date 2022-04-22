@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Experiences
+{% endblock %}
+
+{% block page_content %}
+    <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner"
+            style="background-image: url(images/img_6.jpg)">
+        <div class="overlay"></div>
+        <div class="gtco-container">
+            <div class="row">
+                <div class="col-md-12 col-md-offset-0 text-center">
+                    <div class="row row-mt-15em">
+
+                        <div class="col-md-12 mt-text animate-box" data-animate-effect="fadeInUp">
+                            <h1>Destination</h1>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="gtco-section">
+        <div class="gtco-container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+                    <h2>Trip With Your Favourite Destination</h2>
+                    <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident.
+                        Odit ab aliquam dolor eius.</p>
+                </div>
+            </div>
+            <div class="row">
+                {% for exp in experiences %}
+                    {% if exp.spots <= 0 %}
+
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+
+                        <a href="" class="fh5co-card-item">
+                            <div class="fh5co-text">
+                        <h1>Not Available</h1>
+                            </div>
+                            <figure>
+                                <div class="overlay"><i></i></div>
+                                <img src="{{ exp.experience_picture.url }}" alt="Image" class="img-responsive">
+                            </figure>
+                            <div class="fh5co-text">
+                                <h2>{{ exp.title }}</h2>
+                                <h2>{{ exp.category }}</h2>
+                                <p>{{ exp.description }}</p>
+                                <h2>{{ exp.price }} EUR</h2>
+
+
+                            </div>
+                        </a>
+                    </div>
+                    {% else %}
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <a href="{% url 'register for experience' exp.id %}" class="fh5co-card-item">
+                                <figure>
+                                    <div class="overlay"><i></i></div>
+                                    <img src="{{ exp.experience_picture.url }}" alt="Image" class="img-responsive">
+                                </figure>
+                                <div class="fh5co-text">
+                                    <h2>{{ exp.title }}</h2>
+                                    <h2>{{ exp.category }}</h2>
+                                    <p>{{ exp.description }}</p>
+                                    <h2>{{ exp.price }} EUR</h2>
+
+                                    <p><span class="btn btn-primary">Book Now</span></p>
+                                </div>
+                            </a>
+                        </div>
+                    {% endif %}
+
+
+                {% endfor %}
+
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

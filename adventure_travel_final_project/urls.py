@@ -8,4 +8,6 @@ urlpatterns = [
                   path('', include('adventure_travel_final_project.at_web.urls')),
                   path('auth/', include('adventure_travel_final_project.at_auth.urls')),
                   path('profiles/', include('adventure_travel_final_project.at_profiles.urls')),
+                  path('experience/', include('adventure_travel_final_project.at_experiences.urls'))
+
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
