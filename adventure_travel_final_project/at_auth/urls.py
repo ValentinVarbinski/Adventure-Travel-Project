@@ -3,7 +3,7 @@ import adventure_travel_final_project.common.signals
 from adventure_travel_final_project.at_auth.views.auth import UserRegisterView, UserLoginView, UserLogoutView, \
     UserRequireLoginView
 from adventure_travel_final_project.at_auth.views.email_verification import VerifyEmailRegisterView, \
-    verify_email_login_view, activate_email_view, validation_error_view
+    verify_email_login_view, activate_email_view, validation_error_view, user_not_verified
 from adventure_travel_final_project.at_auth.views.password_management import UserPasswordResetView, \
     UserPasswordResetDoneView, UserPasswordResetConfirmView, UserPasswordCompleteView
 
@@ -14,6 +14,7 @@ urlpatterns = [
     path('logout/', UserLogoutView.as_view(), name='logout'),
 
     path('verify_email_register/', VerifyEmailRegisterView.as_view(), name='verify email initial'),
+    path('user_not_verified/<int:pk>', user_not_verified, name='user not verified'),
     path('verify_email_login/<int:pk>', verify_email_login_view, name='verify email additional'),
     path('activate_email/<int:pk>/<token>/', activate_email_view, name='activate email'),
     path('activate_email/validation_error', validation_error_view, name='validation error'),

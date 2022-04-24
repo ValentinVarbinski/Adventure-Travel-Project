@@ -10,8 +10,6 @@ def validate_only_english_letters(value):
             raise ValidationError('You are not allowed to use non-English letters')
 
 
-
-
 # FORM VALIDATORS
 def validate_bot_catcher(value):
     if value:

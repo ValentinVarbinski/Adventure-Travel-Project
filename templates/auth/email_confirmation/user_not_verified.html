@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Require Login
+{% endblock %}
+
+{% block page_content %}
+    <div class="gtco-cover gtco-cover-sm"
+         style="background-image: url({% static 'images/veliko-tarnovo-bulgaria-community-building-travel.jpg' %})"
+         data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="gtco-container text-center">
+            <div class="display-t">
+                <div class="display-tc">
+                    <h1>It looks that your account it is not been activated yet, please check your e-mail.</h1>
+                    <h1>In case you do not have an e-mail click <a href="{% url 'verify email additional' user.id %}">here</a> and will send you another.</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

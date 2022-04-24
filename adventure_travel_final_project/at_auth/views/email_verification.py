@@ -10,6 +10,15 @@ class VerifyEmailRegisterView(views.TemplateView):
     template_name = 'auth/email_confirmation/confirm_email_initial.html'
 
 
+def user_not_verified(request, pk):
+    user = AdventureTravelUser.objects.get(pk=pk)
+    context = {
+        'user': user,
+    }
+
+    return render(request, 'auth/email_confirmation/user_not_verified.html', context)
+
+
 def verify_email_login_view(request, pk):
     user = AdventureTravelUser.objects.get(pk=pk)
     template = 'auth/email_confirmation/confirm_email_additional.html'

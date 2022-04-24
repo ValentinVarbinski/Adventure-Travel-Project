@@ -1,6 +1,7 @@
 from django.contrib.auth import mixins as auth_mixins
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import views as auth_views
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views import generic as views
@@ -64,3 +65,12 @@ class ExperienceCancelView(auth_mixins.LoginRequiredMixin, views.DeleteView):
     template_name = 'experiences/adventuretravelregistration_confirm_delete.html'
     model = AdventureTravelRegistration
     success_url = reverse_lazy('home')
+
+    def form_valid(self, form):
+        success_url = self.get_success_url()
+        exp = AdventureTravelExperience.objects.get(pk=self.object.experience_id)
+        exp.spots += 1
+        exp.save()
+        self.object.delete()
+        return HttpResponseRedirect(success_url)
+

@@ -21,11 +21,12 @@ class UserLoginView(auth_views.LoginView):
 
     def form_valid(self, form):
         user = form.get_user()
+        user_id = user.id
         if user.is_verified:
             login(self.request, user)
             return redirect('home')
         else:
-            return redirect('verify email additional', user.id)
+            return redirect('user not verified', user_id)
 
 
 class UserLogoutView(auth_views.LogoutView):
