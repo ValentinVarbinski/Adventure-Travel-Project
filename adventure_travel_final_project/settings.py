@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'adventure_travel_final_project.at_auth',
     'adventure_travel_final_project.at_profiles',
     'adventure_travel_final_project.at_experiences',
+    'adventure_travel_final_project.at_blog',
 ]
 
 MIDDLEWARE = [

@@ -5,7 +5,7 @@ from adventure_travel_final_project.at_experiences.models import AdventureTravel
 
 
 def show_experiences_view(request):
-    experiences = AdventureTravelExperience.objects.all()
+    experiences = AdventureTravelExperience.objects.all().order_by('date')
     context = {
         'experiences': experiences,
     }
@@ -28,3 +28,6 @@ def register_for_experience_view(request, pk):
         exp.spots -= 1
         exp.save()
         return render(request, 'experiences/register_for_experience.html')
+
+
+

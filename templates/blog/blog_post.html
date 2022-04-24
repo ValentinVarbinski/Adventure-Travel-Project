@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Travel Blog
+{% endblock %}
+
+{% block page_content %}
+    <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner"
+            style="background-image: url(images/img_6.jpg)">
+        <div class="overlay"></div>
+        <div class="gtco-container">
+            <div class="row">
+                <div class="col-md-12 col-md-offset-0 text-center">
+                    <div class="row row-mt-15em">
+
+                        <div class="col-md-12 mt-text animate-box" data-animate-effect="fadeInUp">
+                            <h1>{{ post.title }}</h1>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="gtco-section">
+        <div class="gtco-container">
+            <div class="row">
+                    <div class="col-md-12">
+                    <div class="our_two_box magna_top90">
+                        <div class="row d_flex">
+                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                                <figure>
+                                    <div class="overlay"><i></i></div>
+                                    <img src="{{ post.blog_picture.url }}" alt="Image" class="img-responsive">
+                                </figure>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+
+                                    <div class="our_text_box">
+                                        <p>{{ post.content }}</p>
+
+                                        <div class="post_box padding_bottom1">
+                                            <h4 class="flot_left1">Post By : {{ post.author }} </h4>
+
+                                        </div>
+                                    </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

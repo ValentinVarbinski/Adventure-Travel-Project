@@ -7,6 +7,7 @@ from adventure_travel_final_project.at_experiences.models import AdventureTravel
 @admin.register(AdventureTravelExperience)
 class ExperiencesAdmin(ModelAdmin):
     list_display = ('title', 'category', 'date', 'price', 'spots')
+    ordering = ('date',)
 
 
 @admin.register(AdventureTravelRegistration)

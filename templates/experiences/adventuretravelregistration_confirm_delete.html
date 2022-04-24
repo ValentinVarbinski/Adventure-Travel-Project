@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Verify Email Additional
+{% endblock %}
+
+
+{% block page_content %}
+    <div class="gtco-cover gtco-cover-sm"
+         style="background-image: url({% static 'images/veliko-tarnovo-bulgaria-community-building-travel.jpg' %})"
+         data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="gtco-container text-center">
+            <div class="display-t">
+                <div class="display-tc">
+                    <form method="post">{% csrf_token %}
+
+
+                        <h2>Are you sure you want to cancel "{{ object.experience.title }}"?</h2>
+
+
+                        <div class="col-md-12">
+                            <input type="submit" class="btn btn-primary "
+                                   value="Cancel">
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

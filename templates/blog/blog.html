@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Travel Blog
+{% endblock %}
+
+{% block page_content %}
+    <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner"
+            style="background-image: url(images/img_6.jpg)">
+        <div class="overlay"></div>
+        <div class="gtco-container">
+            <div class="row">
+                <div class="col-md-12 col-md-offset-0 text-center">
+                    <div class="row row-mt-15em">
+
+                        <div class="col-md-12 mt-text animate-box" data-animate-effect="fadeInUp">
+                            <h1>Our Travel Blog</h1>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="gtco-section">
+        <div class="gtco-container">
+            <div class="row">
+
+
+                <div class="col-md-12">
+                    {% for p in posts %}
+                        <div class="our_two_box magna_top90">
+                        <div class="row d_flex">
+                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                                <figure>
+                                    <div class="overlay"><i></i></div>
+                                    <img src="{{ p.blog_picture.url }}" alt="Image" class="img-responsive">
+                                </figure>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                                <form action="{% url 'blog post' p.slug %}">
+                                    <div class="our_text_box">
+                                        <h3 class="awesome pa_wi">{{ p.title }}</h3>
+                                        <p>{{ p.content| truncatechars:50}}</p>
+                                        <p>
+                                            <button class="btn btn-primary">Read More</button>
+                                        </p>
+                                        <div class="post_box padding_bottom1">
+                                            <h4 class="flot_left1">Post By : {{ p.author }} </h4>
+
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
