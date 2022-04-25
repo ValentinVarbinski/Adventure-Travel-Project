@@ -21,15 +21,19 @@
                                          width="150">
                                     <div class="mt-3">
                                         <br>
-                                        <a href="{% url 'my experiences' request.user %}"
-                                           class="btn btn-primary">My Experiences</a>
+
+                                        <input type="button" class="btn btn-primary btn-block" value="My Experiences"
+                                               onclick=" my_experiences('{{ request.user }}')">
+
+
                                     </div>
                                     <div class="mt-3">
                                         <br>
-                                        <a href="{% url 'edit profile' request.user.profile_user.id %}"
-                                           class="btn btn-primary">Edit Profile</a>
-                                        <a href="{% url 'change password' request.user.id %}" class="btn btn-primary">Change
-                                            Password</a>
+                                        <input type="button" class="btn btn-primary btn-block" value="Edit Profile"
+                                               onclick=" edit_profile()">
+                                        <input type="button" class="btn btn-primary btn-block" value="Change Password"
+                                               onclick=" change_password({{ request.user.id }})">
+
                                     </div>
                                     <br>
                                 </div>

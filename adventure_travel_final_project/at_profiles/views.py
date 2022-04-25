@@ -21,15 +21,15 @@ class ProfileView(auth_mixins.LoginRequiredMixin, views.DetailView):
 
 
 @login_required()
-def edit_profile_view(request, pk):
-    profile = AdventureTravelProfile.objects.get(pk=pk)
+def edit_profile_view(request):
+    profile = AdventureTravelProfile.objects.get(user_id=request.user.id)
     form = UserProfileForm(instance=profile)
 
     if request.method == 'POST':
         form = UserProfileForm(request.POST, request.FILES, instance=profile)
         if form.is_valid():
             form.save()
-            return redirect('profile', pk)
+            return redirect('profile', profile.id)
 
     context = {
         'form': form,
