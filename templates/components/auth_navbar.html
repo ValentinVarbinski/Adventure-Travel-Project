@@ -1,5 +1,5 @@
 {% if request.user.is_authenticated %}
-    <li class="nav-item"><a href="{% url 'profile' request.user.profile_user.id %}" class="nav-link">Hello, {{ request.user }}</a></li>
+    <li class="nav-item"><a href="{% url 'profile' request.user.profile_user.id %}" class="nav-link">PROFILE</a></li>
     <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">LOGOUT</a></li>
 {% else %}
     <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">REGISTER</a></li>

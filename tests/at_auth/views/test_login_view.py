@@ -7,14 +7,10 @@ class LoginViewTests(AdventureTravelTestCases):
     def test_login_view_when_user_is_not_verified__expect_redirect_to_user_not_verified(self):
         expected_url = reverse('user not verified', args=[self.user.id])
         response = self.client.post(reverse('login'), {
-            'username': self.username,
-            'password': self.password,
+            'username': self.USERNAME,
+            'password': self.PASSWORD,
 
         })
 
         self.assertRedirects(response, expected_url)
 
-    # def test_user_not_verified__expect_render_to_user_not_verified_page(self):
-    #     response = self.client.post(reverse('verify email additional', args=[self.user.id]))
-    #
-    #     self.assertRedirects(response, 'auth/email_confirmation/user_not_verified.html')
