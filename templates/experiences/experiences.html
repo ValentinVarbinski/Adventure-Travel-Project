@@ -6,7 +6,7 @@
 
 {% block page_content %}
     <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner"
-            style="background-image: url(images/img_6.jpg)">
+            style="background-image: url({% static 'images/experiences.jpg' %})">
         <div class="overlay"></div>
         <div class="gtco-container">
             <div class="row">
@@ -14,7 +14,7 @@
                     <div class="row row-mt-15em">
 
                         <div class="col-md-12 mt-text animate-box" data-animate-effect="fadeInUp">
-                            <h1>Destination</h1>
+                            <h1>Tours and Adventures for Travelers who love to learn.</h1>
                         </div>
 
                     </div>
@@ -28,7 +28,7 @@
         <div class="gtco-container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center gtco-heading">
-                    <h2>Trip With Your Favourite Destination</h2>
+                    <h2>Choose among our available services.</h2>
 
                 </div>
             </div>
@@ -68,6 +68,7 @@
                                     <h2>{{ exp.category }}</h2>
                                     <p>{{ exp.description }}</p>
                                     <h2>{{ exp.price }} EUR</h2>
+                                    <h2>{{ exp.date }}</h2>
 
                                     <p><span class="btn btn-primary">Book Now</span></p>
                                 </div>

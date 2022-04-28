@@ -15,7 +15,9 @@
             <div class="display-t">
                 <div class="display-tc">
                     <h2>Thank you for booking with us.</h2>
-                    <h2> We have sent you a confirmation email with all the information about your experience.</h2>
+                    <h2> Here you can see information about your experiences.</h2>
+                    <input type="button" class="btn btn-primary" value="My Experiences"
+                                       onclick=" my_experiences('{{ request.user }}')">
 
                 </div>
             </div>

@@ -56,13 +56,14 @@
 
     <!-- Theme style  -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <script src="{% static 'js/relocate_buttons/relocate-functions.js' %}"></script>
+
     <!-- Modernizr JS -->
     <script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
     <!-- FOR IE9 below -->
     <!--[if lt IE 9]>
 	<script src="{% static 'js/respond.min.js' %}"></script>
 	<![endif]-->
+    <script src="{% static 'js/relocate_buttons/relocate-functions.js' %}"></script>
 
 </head>
 <body>
@@ -83,10 +84,6 @@
                 </div>
                 <div class="col-xs-8 text-right menu-1">
                     <ul>
-                        {% if user.is_authenticated %}
-                            <li class="nav-item"><a href=""
-                                                    class="nav-link">Hello, {{ request.user }}</a>
-                        {% endif %}
                         <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">ABOUT</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'show experiences' %}">EXPERIENCES</a>
                         </li>
@@ -111,19 +108,21 @@
                 <div class="col-md-4">
                     <div class="gtco-widget">
                         <h3>About Us</h3>
-                        <p>info</p>
+                        <p>We are here to provide outstanding services to our customers who have a passion to travel and
+                            experiencing adventures.
+                            More for us you can read <a href="{% url 'about' %}">here</a>.</p>
                     </div>
                 </div>
 
                 <div class="col-md-2 col-md-push-1">
                     <div class="gtco-widget">
-                        <h3>Experiences</h3>
-                        <ul class="gtco-footer-links">
-                            <li><a href="#">Service 1</a></li>
-                            <li><a href="#">Service 2</a></li>
-                            <li><a href="#">Service 3</a></li>
-
-                        </ul>
+                        <h3></h3>
+                        {#                        <ul class="gtco-footer-links">#}
+                        {#                            <li><a href="#">Service 1</a></li>#}
+                        {#                            <li><a href="#">Service 2</a></li>#}
+                        {#                            <li><a href="#">Service 3</a></li>#}
+                        {##}
+                        {#                        </ul>#}
                     </div>
                 </div>
 

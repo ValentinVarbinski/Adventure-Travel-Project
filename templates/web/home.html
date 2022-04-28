@@ -9,24 +9,40 @@
 
 {% block page_content %}
     <header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner"
-            style="background-image: url({% static 'images/veliko-tarnovo-bulgaria-community-building-travel.jpg' %})">
+            style="background-image: url({% static 'images/home_page.png' %})">
         <div class="overlay"></div>
         <div class="gtco-container">
             <div class="row">
                 <div class="col-md-12 col-md-offset-0 text-left">
 
+                    {% if not user.is_authenticated %}
+                        <div class="row row-mt-14em">
+                            <div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
+                                <h1>Love to travel and experience new adventures?</h1>
+                                <h1>Come join us!</h1>
 
-                    <div class="row row-mt-14em">
-                        <div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
-                            <h1>Love to travel and experience new adventures?</h1>
-                            <h1>Come join us!</h1>
-
+                            </div>
                         </div>
-                    </div>
-                    <div>
+                        <div>
                         <input type="button" class="btn btn-primary" value="Join" onclick=" register_relocate()">
+                    {% else %}
+                        <div class="row row-mt-14em">
+                            <div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
+                                <h1>Planning a trip or a vacation, check our services?</h1>
+                                <input type="button" class="btn btn-primary" value="Experiences"
+                                       onclick=" experiences_relocate()">
+                                <h1>If you would like to learn something interesting, visit our blog. </h1>
+                                <input type="button" class="btn btn-primary" value="Blog"
+                                       onclick=" blog_relocate()">
+
+                            </div>
+                        </div>
+                        <div>
 
 
+                    {% endif %}
+
+                    </div>
                     </div>
                 </div>
             </div>

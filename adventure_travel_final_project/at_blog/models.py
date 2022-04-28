@@ -30,7 +30,7 @@ class AdventureTravelPostAuthor(models.Model):
 
 class AdventureTravelPost(models.Model):
     TITLE_MAX_LENGTH = 100
-    CONTENT_MAX_LENGTH = 400
+    CONTENT_MAX_LENGTH = 600
 
     title = models.CharField(
         max_length=TITLE_MAX_LENGTH,

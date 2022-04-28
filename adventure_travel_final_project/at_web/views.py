@@ -1,3 +1,4 @@
+from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic as views
 
@@ -22,3 +23,17 @@ class ContactFormView(views.CreateView):
 
 class SubmitContactFormView(views.TemplateView):
     template_name = 'contact/submit_contact_form.html'
+
+
+def handler404(request, exception):
+    context = {}
+    response = render(request, "web/errors/404.html", context=context)
+    response.status_code = 404
+    return response
+
+
+def handler500(request):
+    context = {}
+    response = render(request, "web/errors/500.html", context=context)
+    response.status_code = 500
+    return response

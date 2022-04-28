@@ -6,7 +6,7 @@
 
 {% block page_content %}
     <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner"
-            style="background-image: url(images/img_6.jpg)">
+            style="background-image: url({% static 'images/blog.jpg' %})">
         <div class="overlay"></div>
         <div class="gtco-container">
             <div class="row">
@@ -43,7 +43,7 @@
                                 <form action="{% url 'blog post' p.slug %}">
                                     <div class="our_text_box">
                                         <h3 class="awesome pa_wi">{{ p.title }}</h3>
-                                        <p>{{ p.content| truncatechars:50}}</p>
+                                        <p>{{ p.content| truncatechars:200}}</p>
                                         <p>
                                             <button class="btn btn-primary">Read More</button>
                                         </p>

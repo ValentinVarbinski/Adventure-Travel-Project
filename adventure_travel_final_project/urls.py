@@ -12,3 +12,6 @@ urlpatterns = [
                   path('blog/', include('adventure_travel_final_project.at_blog.urls')),
 
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = 'adventure_travel_final_project.at_web.views.handler404'
+handler500 = 'adventure_travel_final_project.at_web.views.handler500'
