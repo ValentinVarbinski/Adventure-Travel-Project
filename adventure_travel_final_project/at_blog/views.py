@@ -4,7 +4,7 @@ from adventure_travel_final_project.at_blog.models import AdventureTravelPost
 
 
 def blog_page_view(request):
-    posts = AdventureTravelPost.objects.all()
+    posts = AdventureTravelPost.objects.all().order_by('created_on')
 
     context = {
         'posts': posts,

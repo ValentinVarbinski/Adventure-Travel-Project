@@ -11,6 +11,7 @@ class AdventureTravelTestCases(TestCase):
     USERNAME = 'valio1'
     EMAIL = 'valio@abv.bg'
     PASSWORD = '1234'
+    IS_VERIFIED = False
 
     def setUp(self):
         self.client = Client()
@@ -19,7 +20,7 @@ class AdventureTravelTestCases(TestCase):
             username=self.USERNAME,
             email=self.EMAIL,
             password=self.PASSWORD,
-            is_verified=False,
+            is_verified=self.IS_VERIFIED,
         )
         self.blog_author = AdventureTravelPostAuthor(
             first_name='Valentin',

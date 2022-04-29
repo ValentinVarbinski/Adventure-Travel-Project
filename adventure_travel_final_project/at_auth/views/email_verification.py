@@ -1,6 +1,5 @@
 from django.shortcuts import redirect, render
 from django.views import generic as views
-
 from adventure_travel_final_project.at_auth.models import AdventureTravelUser
 from adventure_travel_final_project.common.emails import send_verification_email
 from adventure_travel_final_project.common.tokens import activation_token

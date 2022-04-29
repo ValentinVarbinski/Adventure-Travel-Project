@@ -14,3 +14,12 @@ class LoginViewTests(AdventureTravelTestCases):
 
         self.assertRedirects(response, expected_url)
 
+    def test_login_view_when_user_is_verified__expect_redirect_to_user_not_verified(self):
+        self.client.login(username=self.USERNAME, password=self.PASSWORD)
+        response = self.client.get('/')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'web/home.html')
+
+
+
+

@@ -40,7 +40,7 @@ def edit_profile_view(request):
 class ChangePasswordView(auth_mixins.LoginRequiredMixin, auth_views.PasswordChangeView):
     template_name = 'profiles/change_password_profile.html'
     form_class = ChangePasswordForm
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('reset password complete')
 
 
 class MyExperiencesView(auth_mixins.LoginRequiredMixin, views.ListView):
@@ -64,7 +64,7 @@ class MyExperiencesView(auth_mixins.LoginRequiredMixin, views.ListView):
 class ExperienceCancelView(auth_mixins.LoginRequiredMixin, views.DeleteView):
     template_name = 'experiences/adventuretravelregistration_confirm_delete.html'
     model = AdventureTravelRegistration
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('show experiences')
 
     def form_valid(self, form):
         success_url = self.get_success_url()
