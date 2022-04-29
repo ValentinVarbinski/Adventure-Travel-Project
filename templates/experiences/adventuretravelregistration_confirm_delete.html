@@ -8,7 +8,7 @@
 
 {% block page_content %}
     <div class="gtco-cover gtco-cover-sm"
-         style="background-image: url({% static 'images/veliko-tarnovo-bulgaria-community-building-travel.jpg' %})"
+         style="background-image: url({% static 'images/img_4.jpg' %})"
          data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="gtco-container text-center">
@@ -17,7 +17,7 @@
                     <form method="post">{% csrf_token %}
 
 
-                        <h2>Are you sure you want to cancel "{{ object.experience.title }}"?</h2>
+                        <h1>Are you sure you want to cancel "{{ object.experience.title }}"?</h1>
 
 
                         <div class="col-md-12">

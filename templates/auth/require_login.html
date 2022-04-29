@@ -5,13 +5,15 @@
 {% endblock %}
 
 {% block page_content %}
-    <div class="gtco-cover gtco-cover-sm" style="background-image: url({% static 'images/veliko-tarnovo-bulgaria-community-building-travel.jpg' %})"
+    <div class="gtco-cover gtco-cover-sm" style="background-image: url({% static 'images/img_4.jpg' %})"
          data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="gtco-container text-center">
             <div class="display-t">
                 <div class="display-tc">
-                    <h1>In order to see this page, you need to be loged in.</h1>
+                    <h1>In order to book, you need to be logged in with your account.</h1>
+                    <input type="button" class="btn btn-primary" value="Login"
+                                       onclick=" login_relocate()">
                 </div>
             </div>
         </div>

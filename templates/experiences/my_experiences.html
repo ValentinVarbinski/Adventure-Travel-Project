@@ -6,7 +6,7 @@
 
 {% block page_content %}
     <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner"
-            style="background-image: url(images/img_6.jpg)">
+            style="background-image: url({% static 'images/profile_tours.jpg' %})">
         <div class="overlay"></div>
         <div class="gtco-container">
             <div class="row">
@@ -28,12 +28,14 @@
         <div class="gtco-container">
 
             <div class="row">
-                {% for exp in experiences %}
+                {% if experiences %}
+                    {% for exp in experiences %}
                         <div class="col-lg-4 col-md-4 col-sm-6">
                             <a href="{% url 'cancel experience' exp.id %}" class="fh5co-card-item">
                                 <figure>
                                     <div class="overlay"><i></i></div>
-                                    <img src="{{ exp.experience.experience_picture.url }}" alt="Image" class="img-responsive">
+                                    <img src="{{ exp.experience.experience_picture.url }}" alt="Image"
+                                         class="img-responsive">
                                 </figure>
                                 <div class="fh5co-text">
                                     <h2>{{ exp.experience.date }}  </h2>
@@ -49,7 +51,15 @@
 
 
 
-                {% endfor %}
+                    {% endfor %}
+                {% else %}
+                    <div class="text-center">
+                        <h1>You do not have any reservations yet.</h1>
+                        <h1>Check out our services.</h1>
+                        <input type="button" class="btn btn-primary" value="Experiences"
+                               onclick=" experiences_relocate()">
+                    </div>
+                {% endif %}
 
 
             </div>
